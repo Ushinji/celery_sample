@@ -21,6 +21,7 @@ services:
       MYSQL_ROOT_PASSWORD: celerysample
     volumes:
       - "db-data:/var/lib/mysql"
+      - "./template/mysql/conf.d:/etc/mysql/conf.d"
     ports:
       - '3316:3306'
 
