@@ -2,7 +2,7 @@ version: "3.7"
 services:
   app:
     build: "./"
-    command: "python app.py"
+    command: "pipenv run start"
     ports:
       - "5000:5000"
     volumes:

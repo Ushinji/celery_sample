@@ -11,4 +11,4 @@ RUN pip install pipenv
 
 WORKDIR /app
 COPY Pipfile* $APP_ROOT
-RUN pipenv install --system
+RUN pipenv install
