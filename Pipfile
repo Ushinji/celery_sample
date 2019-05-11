@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 flask = "*"
+flask-script = "*"
 
 [dev-packages]
 flake8 = "*"
@@ -14,6 +15,6 @@ autopep8 = "*"
 python_version = "3.7"
 
 [scripts]
-start = "python app.py"
+start = "python manage.py runserver"
 lint = "flake8 ."
 fix = "autopep8 -ivr ."

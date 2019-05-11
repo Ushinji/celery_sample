@@ -3,6 +3,8 @@ services:
   app:
     build: "./"
     command: "pipenv run start"
+    environment:
+      RUN_MODE: development
     ports:
       - "5000:5000"
     volumes:
