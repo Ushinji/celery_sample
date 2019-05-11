@@ -5,7 +5,25 @@ services:
     command: "pipenv run start"
     environment:
       RUN_MODE: development
+      DATABASE_USER: root
+      DATABASE_PASSWORD: celerysample
+      DATABASE_HOST: db
     ports:
       - "5000:5000"
     volumes:
       - "./:/app"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: celerysample
+    volumes:
+      - "db-data:/var/lib/mysql"
+    ports:
+      - '3316:3306'
+
+volumes:
+  db-data:
+    driver: local
