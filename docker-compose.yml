@@ -8,6 +8,7 @@ services:
       DATABASE_USER: root
       DATABASE_PASSWORD: celerysample
       DATABASE_HOST: db
+      PIPENV_VENV_IN_PROJECT: 'true'
     ports:
       - "5000:5000"
     volumes:
