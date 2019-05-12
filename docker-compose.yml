@@ -15,6 +15,23 @@ services:
       - "./:/app"
     depends_on:
       - db
+      - redis
+      - worker
+  
+  worker:
+    build: "./"
+    command: "pipenv run start_worker"
+    environment:
+      RUN_MODE: development
+      DATABASE_USER: root
+      DATABASE_PASSWORD: celerysample
+      DATABASE_HOST: db
+      PIPENV_VENV_IN_PROJECT: 'true'
+    volumes:
+      - "./:/app"
+    depends_on:
+      - db
+      - redis
 
   db:
     image: mysql:5.7

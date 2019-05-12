@@ -9,6 +9,8 @@ flask-script = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 mysqlclient = "*"
+redis = "*"
+celery = "*"
 
 [dev-packages]
 flake8 = "*"
@@ -19,6 +21,7 @@ python_version = "3.7"
 
 [scripts]
 start = "python manage.py runserver"
+start_worker = "celery -A app worker --loglevel=info"
 lint = "flake8 ."
 fix = "autopep8 -ivr ."
 db_migrate = "python manage.py db migrate"
