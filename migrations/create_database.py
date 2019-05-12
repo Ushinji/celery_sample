@@ -16,7 +16,7 @@ if database_name_development not in [d[0] for d in existing_databases]:
     mysql_engine.execute(
         f'''CREATE DATABASE {database_name_development}
             DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;''')
-    print("Created database : {0}".format(database_name_development))
+    print("\'{0}\' was created.".format(database_name_development))
 
 
 # Create Database for test if it did not exist
@@ -26,4 +26,4 @@ if database_name_test not in [d[0] for d in existing_databases]:
     mysql_engine.execute(
         f'''CREATE DATABASE {database_name_test}
             DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;''')
-    print("Created database : {0}".format(database_name_test))
+    print("\'{0}\' was created.".format(database_name_test))
