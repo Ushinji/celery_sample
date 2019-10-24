@@ -15,6 +15,7 @@ celery = "*"
 [dev-packages]
 flake8 = "*"
 autopep8 = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.7"
@@ -24,6 +25,7 @@ start = "python manage.py runserver"
 start_worker = "celery -A app worker --loglevel=info"
 lint = "flake8 ."
 fix = "autopep8 -ivr ."
+test = "pytest"
 db_migrate = "python manage.py db migrate"
 db_upgrade = "python manage.py db upgrade"
 db_downgrade = "python manage.py db downgrade"
